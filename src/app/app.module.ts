@@ -11,13 +11,21 @@ import { LogoutComponent } from './logout/logout.component';
 import { MenuComponent } from './menu/menu.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {HttpInterceptorService} from "./basic-auth-interceptor.service";
+import { HomeComponent } from './home/home.component';
+import { ProjectComponent } from './project/project.component';
+import { UserComponent } from './user/user.component';
+import { TempsComponent } from './temps/temps.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     LogoutComponent,
-    MenuComponent
+    MenuComponent,
+    HomeComponent,
+    ProjectComponent,
+    UserComponent,
+    TempsComponent
   ],
   imports: [
     BrowserModule,
