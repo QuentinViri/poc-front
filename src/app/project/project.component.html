@@ -1,0 +1,36 @@
+<div class="list row">
+  <div class="col-md-6">
+    <h4>Project List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let project of projects; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveProject(project, i)"
+      >
+        {{ project.name }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentProject.id">
+      <h4>Project</h4>
+      <div>
+        <label><strong>Name:</strong></label> {{ currentProject.name }}
+      </div>
+      <div>
+        <label><strong>Description:</strong></label>
+        {{ currentProject.name }}
+      </div>
+      <div>
+        <label><strong>Date:</strong></label>
+        {{ currentProject.date }}
+      </div>
+    </div>
+
+    <div *ngIf="!currentProject">
+      <br />
+      <p>Please click on a Project...</p>
+    </div>
+  </div>
+</div>
