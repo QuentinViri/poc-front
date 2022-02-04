@@ -1,0 +1,20 @@
+<div class="container" *ngIf="currentUser">
+  <h2>Temps de {{currentUser.username}}</h2>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Projets</th>
+      <th>Date</th>
+      <th>Temps</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let project of projects">
+      <td>{{project.name}}</td>
+      <td>{{project.date}}</td>
+      <td>{{project.description}}</td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>

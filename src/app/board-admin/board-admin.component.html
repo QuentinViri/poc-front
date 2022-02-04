@@ -1,0 +1,22 @@
+<div class="container" *ngIf="currentUser">
+  <h2>Liste des users</h2>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+    </tr>
+    <tr *ngFor="let role of users">
+      <td>{{role.roles}}</td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>

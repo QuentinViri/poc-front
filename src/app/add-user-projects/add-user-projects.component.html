@@ -1,0 +1,36 @@
+<div class="container">
+  <div *ngIf="!submitted">
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Projects List</h4>
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            *ngFor="let project of projects; let i = index"
+            [class.active]="i == currentIndexProject"
+            (click)="setActiveProject(project, i)"
+          >
+            {{ project.name }}
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h4>Users List</h4>
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            *ngFor="let user of users; let i = index"
+            [class.active]="i == currentIndexUser"
+            (click)="setActiveUser(user, i)"
+          >
+            {{ user.username }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <button (click)="save()" class="btn btn-success">Submit</button>
+  </div>
+
+
+</div>
