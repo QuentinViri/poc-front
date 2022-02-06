@@ -4,8 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { BoardManagerComponent } from './board-manager/board-manager.component';
-import { BoardUserComponent } from './board-user/board-user.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -22,13 +20,12 @@ import {NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
 import {DatePipe} from "@angular/common";
 import { CraListComponent } from './cra-list/cra-list.component';
 import { CraDetailComponent } from './cra-detail/cra-detail.component';
+import { ProjectAddUserComponent } from './project-add-user/project-add-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BoardAdminComponent,
-    BoardManagerComponent,
-    BoardUserComponent,
     HomeComponent,
     LoginComponent,
     ProfileComponent,
@@ -40,6 +37,7 @@ import { CraDetailComponent } from './cra-detail/cra-detail.component';
     UserDetailComponent,
     CraListComponent,
     CraDetailComponent,
+    ProjectAddUserComponent,
   ],
     imports: [
         BrowserModule,

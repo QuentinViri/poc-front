@@ -31,5 +31,8 @@ export class ProjectService {
   findByName(title: any): Observable<Project[]> {
     return this.http.get<Project[]>(`${baseUrl}?name=${name}`);
   }
+  addUser(id:any,data:any){
+    return this.http.post(`${baseUrl}/${id}/users`,data)
+  }
 
 }

@@ -28,6 +28,7 @@ export class CraDetailComponent implements OnInit {
   currentIndex = -1;
   user: User = {};
   message = '';
+  submitted = false;
 
   constructor(
     private worktimeService : WorktimeService,
@@ -76,6 +77,7 @@ export class CraDetailComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
+          this.submitted = true;
         },
         error => {
           console.log(error);

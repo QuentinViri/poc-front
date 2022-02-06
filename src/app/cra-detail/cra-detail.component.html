@@ -33,4 +33,11 @@
     </button>
     <p>{{ message }}</p>
   </div>
+  <div *ngIf="submitted">
+    <h4>Worktime was submitted successfully!</h4>
+    <button class="m-3 btn btn-primary" onclick="window.location.href='/cra'">
+      Revenir aux projets
+    </button>
+  </div>
+
 </div>

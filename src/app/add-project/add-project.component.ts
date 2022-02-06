@@ -24,9 +24,19 @@ export class AddProjectComponent implements OnInit {
   users?: User[];
 
 
-  constructor(private projectService: ProjectService) { }
+  constructor(
+    private projectService: ProjectService,
+    private userService: UserService) { }
 
   ngOnInit(): void {
+    this.userService.getAll().subscribe(
+      data => {
+        this.users = data;
+      },
+      error => {
+        console.log(error)
+      }
+    )
   }
   saveProject(): void {
     const data = {

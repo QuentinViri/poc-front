@@ -11,12 +11,7 @@
     </li>
   </ul>
 
-  <button class="m-3 btn btn-sm btn-danger" (click)="removeAllUsers()">
-    Remove All
-  </button>
-  <!-- <button class="m-3 btn btn-sm btn-success" onclick="window.location.href='/addusers'">
-    Add
-  </button> -->
+
 </div>
 <div class="col-md-6">
   <div *ngIf="currentUser.id">
@@ -32,10 +27,7 @@
         </li>
       </ul>
     </div>
-    <!-- <div>
-      <label><strong>Manager:</strong></label>
-      {{ currentUser.published ? "Published" : "Pending" }}
-    </div> -->
+
 
     <a class="badge badge-warning" routerLink="/users/{{ currentUser.id }}">
       Edit

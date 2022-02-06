@@ -22,8 +22,19 @@
         <label><strong>Description:</strong></label>
         {{ currentProject.description }}
       </div>
+      <div>
+        <label><strong>Users</strong></label>
+        <li
+        class="list-group-item"
+        *ngFor="let user of currentProject.users; let i = index">
+          {{user.username}}
+        </li>
+      </div>
       <a class="badge badge-warning" routerLink="/projects/{{ currentProject.id }}">
         Edit
+      </a>
+      <a class="badge badge-warning" routerLink="/projects/{{ currentProject.id }}/users">
+        Add User
       </a>
     </div>
     <div *ngIf="!currentProject">
