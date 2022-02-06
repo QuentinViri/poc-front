@@ -1,0 +1,63 @@
+<div class="container" *ngIf="currentUser; else loggedOut">
+  <header class="jumbotron">
+    <h3>
+      <strong>{{ currentUser.username }}</strong>
+    </h3>
+  </header>
+  <strong>Your projects:</strong>
+  <ul>
+    <li
+      class="list-group-item"
+      *ngFor="let project of projects; let i = index"
+      [class.active]="i == currentIndex"
+      (click)="setActiveProject(project, i)"
+    >
+      {{ project.name }}
+    </li>
+  </ul>
+</div>
+<div class="col-md-6">
+  <div *ngIf="currentProject.id">
+    <h4>Project</h4>
+    <div>
+      <label><strong>Title:</strong></label>
+      {{ currentProject.name }}
+    </div>
+    <div>
+      <label><strong>Description:</strong></label>
+      {{ currentProject.description }}
+    </div>
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <label><strong>Worktime:</strong></label>
+          </div>
+          <div class="col-9">
+            <div class="table" width="100%" data-toolbar="#toolbar" data-show-toggle="true">
+              <thead>
+              <th>Date</th>
+              <th>Duration</th>
+              </thead>
+              <tbody *ngFor="let time of projectWorktime;  let i = index">
+              <td>{{time.date}}</td>
+              <td>{{time.duration}} hours</td>
+              </tbody>
+            </div>
+          </div>
+
+        </div>
+
+        </div>
+
+      </div>
+
+
+    <a class="badge badge-warning" routerLink="/cra/{{ currentProject.id }}">
+      Edit
+    </a>
+  </div>
+  <ng-template #loggedOut>
+    Please login.
+  </ng-template>
+</div>

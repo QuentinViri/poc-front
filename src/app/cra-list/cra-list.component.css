@@ -1,0 +1,9 @@
+.list-group-item {
+  width: 40%;
+  align-content: center;
+}
+
+.container {
+  align-items: center;
+  align-content: center;
+}

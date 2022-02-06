@@ -6,7 +6,7 @@
         <a href="/home" class="nav-link" routerLink="home">Home </a>
       </li>
       <li class="nav-item" *ngIf="showAdminBoard">
-        <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+        <a href="/admin" class="nav-link" routerLink="admin">Gestion users</a>
       </li>
       <li class="nav-item" *ngIf="showModeratorBoard">
         <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
@@ -17,11 +17,11 @@
       <li class="nav-item" *ngIf="showModeratorBoard">
         <a href="/addproject" class="nav-link" routerLink="addproject">Add project</a>
       </li>
-      <li class="nav-item" *ngIf="showModeratorBoard">
-        <a href="/adduserproject" class="nav-link" routerLink="adduserproject">Add User project</a>
-      </li>
       <li class="nav-item">
         <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+      </li>
+      <li class="nav-item">
+        <a href="/cra" class="nav-link" *ngIf="isLoggedIn" routerLink="cra">Déclaration CRA</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
