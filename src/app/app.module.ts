@@ -16,8 +16,12 @@ import {authInterceptorProviders } from "./helpers/auth.interceptor";
 import { AddProjectComponent } from './add-project/add-project.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
-import { AddUserProjectsComponent } from './add-user-projects/add-user-projects.component';
-import {NgbDropdownModule} from "@ng-bootstrap/ng-bootstrap";
+import { UsersListComponent } from './users-list/users-list.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import {NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
+import {DatePipe} from "@angular/common";
+import { CraListComponent } from './cra-list/cra-list.component';
+import { CraDetailComponent } from './cra-detail/cra-detail.component';
 
 @NgModule({
   declarations: [
@@ -32,16 +36,19 @@ import {NgbDropdownModule} from "@ng-bootstrap/ng-bootstrap";
     AddProjectComponent,
     ProjectDetailsComponent,
     ProjectsListComponent,
-    AddUserProjectsComponent,
+    UsersListComponent,
+    UserDetailComponent,
+    CraListComponent,
+    CraDetailComponent,
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
         HttpClientModule,
-        NgbDropdownModule
+        NgbDatepickerModule,
     ],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,14 +11,13 @@ import {User} from "../models/user.model";
 })
 export class BoardAdminComponent implements OnInit {
 
-  currentUser: any;
   users?: User[];
-  currentUsers: User = {};
+  currentUser: User = {};
   currentIndex = -1;
   name = '';
-  constructor(private token: TokenStorageService, private userService: UserService) { }
+
+  constructor(private userService: UserService) { }
   ngOnInit(): void {
-    this.currentUser = this.token.getUser();
     this.retrieveUsers();
   }
 
@@ -33,4 +32,42 @@ export class BoardAdminComponent implements OnInit {
           console.log(error);
         });
   }
+
+  refreshList(): void {
+    this.retrieveUsers();
+    this.currentUser = {};
+    this.currentIndex = -1;
+  }
+
+  setActiveUser(user: User, index: number): void {
+    this.currentUser = user;
+    this.currentIndex = index;
+  }
+
+  removeAllUsers(): void {
+    this.userService.deleteAll()
+      .subscribe(
+        response => {
+          // console.log(response);
+          this.refreshList();
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  searchName(): void {
+    this.currentUser = {};
+    this.currentIndex = -1;
+    this.userService.findByName(this.name)
+      .subscribe(
+        data => {
+          this.users = data;
+          // console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
+  }
 }
+

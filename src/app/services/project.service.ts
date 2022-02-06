@@ -19,10 +19,6 @@ export class ProjectService {
   create(data: any): Observable<any> {
     return this.http.post(baseUrl, data);
   }
-  addusers(idProject: any, data:any): Observable<any> {
-    return this.http.post(`${baseUrl}/${idProject}/users`,data);
-  }
-
   update(id: any, data:any): Observable<any> {
     return this.http.put(`${baseUrl}/${id}`,data);
   }
